@@ -9,7 +9,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
-    "jupyter"
+    "jupyter",
+    "matplotlib"
 ]
 
 [build-system]
