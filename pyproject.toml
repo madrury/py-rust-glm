@@ -1,0 +1,21 @@
+[project]
+name = "py-rust-glm"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "jupyter"
+]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "py_rust_glm._core"

@@ -1,0 +1,13 @@
+[package]
+name = "py-rust-glm"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "=0.28.2", features = ["extension-module"] }
+numpy = "=0.28.0"
+nalgebra = "0.33"
