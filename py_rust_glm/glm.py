@@ -4,7 +4,7 @@ from typing import Self, TypeAlias
 import numpy as np
 from numpy.typing import NDArray
 
-from py_rust_glm._core import solve, solvelr, score
+from py_rust_glm._core import solve, solvelr, score, scorelr
 
 
 DesignMatrix: TypeAlias = NDArray[np.float64]
@@ -37,8 +37,7 @@ class LogisticRegression:
         self.coef_ = solvelr(X, y)
         return self
 
-
-    # def predict(self, X: DesignMatrix) -> Predictions:
-    #     if self.coef_ is None:
-    #         raise RuntimeError("Call fit() before predict()")
-    #     return score(X, self.coef_)
+    def predict(self, X: DesignMatrix) -> Predictions:
+        if self.coef_ is None:
+            raise RuntimeError("Call fit() before predict()")
+        return scorelr(X, self.coef_)
